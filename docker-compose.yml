@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "KompiriFshisa123@"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    healthcheck:
+      # Use the mssql-tools18 path and trust the server certificate so the ODBC driver 18
+      # will not fail on self-signed certs. Use the configured SA password from env.
+      test: ["CMD", "/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "${SA_PASSWORD}", "-C", "-Q", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  businessservice:
+    build:
+      context: ./BusinessService/BusinessService
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=BusinessDb;User Id=sa;Password=${SA_PASSWORD};
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - mssql
+      - rabbitmq
+    ports:
+      - "5101:80"
+
+  reviewservice:
+    build:
+      context: ./ReviewService/ReviewService
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=ReviewDb;User Id=sa;Password=${SA_PASSWORD};
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - mssql
+      - rabbitmq
+    ports:
+      - "5102:80"
+
+  analysisservice:
+    build:
+      context: ./AnalysisService/AnalysisService
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=AnalysisDb;User Id=sa;Password=${SA_PASSWORD};
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - mssql
+      - rabbitmq
+    ports:
+      - "5103:80"
+
+  recommendationservice:
+    build:
+      context: ./RecommendationService/RecommendationService
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=RecommendationDb;User Id=sa;Password=${SA_PASSWORD};
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - mssql
+      - rabbitmq
+    ports:
+      - "5104:80"
+
+  notificationservice:
+    build:
+      context: ./NotificationService/NotificationService
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=NotificationDb;User Id=sa;Password=${SA_PASSWORD};
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - mssql
+      - rabbitmq
+    ports:
+      - "5105:80"
+
+networks:
+  default:
+    name: rekom_network
