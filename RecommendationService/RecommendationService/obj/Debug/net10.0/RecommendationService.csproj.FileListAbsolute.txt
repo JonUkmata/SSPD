@@ -169,3 +169,4 @@ C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\RecommendationService\R
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\RecommendationService\RecommendationService\obj\Debug\net10.0\RecommendationService.pdb
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\RecommendationService\RecommendationService\obj\Debug\net10.0\RecommendationService.genruntimeconfig.cache
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\RecommendationService\RecommendationService\obj\Debug\net10.0\ref\RecommendationService.dll
+C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\RecommendationService\RecommendationService\obj\Debug\net10.0\RecommendationService.sourcelink.json

@@ -26,7 +26,6 @@ services:
     build:
       context: ./BusinessService/BusinessService
     environment:
-      - ConnectionStrings__DefaultConnection=Server=mssql;Database=BusinessDb;User Id=sa;Password=${SA_PASSWORD};
       - RabbitMQ__Host=rabbitmq
     depends_on:
       - mssql
@@ -38,7 +37,6 @@ services:
     build:
       context: ./ReviewService/ReviewService
     environment:
-      - ConnectionStrings__DefaultConnection=Server=mssql;Database=ReviewDb;User Id=sa;Password=${SA_PASSWORD};
       - RabbitMQ__Host=rabbitmq
     depends_on:
       - mssql
@@ -50,7 +48,6 @@ services:
     build:
       context: ./AnalysisService/AnalysisService
     environment:
-      - ConnectionStrings__DefaultConnection=Server=mssql;Database=AnalysisDb;User Id=sa;Password=${SA_PASSWORD};
       - RabbitMQ__Host=rabbitmq
     depends_on:
       - mssql
@@ -62,7 +59,6 @@ services:
     build:
       context: ./RecommendationService/RecommendationService
     environment:
-      - ConnectionStrings__DefaultConnection=Server=mssql;Database=RecommendationDb;User Id=sa;Password=${SA_PASSWORD};
       - RabbitMQ__Host=rabbitmq
     depends_on:
       - mssql
@@ -74,7 +70,6 @@ services:
     build:
       context: ./NotificationService/NotificationService
     environment:
-      - ConnectionStrings__DefaultConnection=Server=mssql;Database=NotificationDb;User Id=sa;Password=${SA_PASSWORD};
       - RabbitMQ__Host=rabbitmq
     depends_on:
       - mssql

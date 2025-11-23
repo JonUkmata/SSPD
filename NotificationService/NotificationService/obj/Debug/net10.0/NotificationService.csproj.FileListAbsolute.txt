@@ -169,3 +169,4 @@ C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\NotificationService\Not
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\NotificationService\NotificationService\obj\Debug\net10.0\NotificationService.pdb
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\NotificationService\NotificationService\obj\Debug\net10.0\NotificationService.genruntimeconfig.cache
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\NotificationService\NotificationService\obj\Debug\net10.0\ref\NotificationService.dll
+C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\NotificationService\NotificationService\obj\Debug\net10.0\NotificationService.sourcelink.json

@@ -169,3 +169,5 @@ C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\ReviewService\ReviewSer
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\ReviewService\ReviewService\obj\Debug\net10.0\ReviewService.pdb
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\ReviewService\ReviewService\obj\Debug\net10.0\ReviewService.genruntimeconfig.cache
 C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\ReviewService\ReviewService\obj\Debug\net10.0\ref\ReviewService.dll
+C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\ReviewService\ReviewService\obj\Debug\net10.0\ReviewService.sourcelink.json
+C:\Users\jonuk\OneDrive\Desktop\Projekti per Rekomandime\ReviewService\ReviewService\bin\Debug\net10.0\RabbitMQ.Client.dll
